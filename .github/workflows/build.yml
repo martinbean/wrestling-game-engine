@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    paths:
+      - 'include/*.h'
+      - 'src/*.c'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: make
